@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('hishamkhalil')
+        DOCKERHUB_CREDENTIALS = credentials('nasirnauman')
     }
     stages { 
         stage('Build docker image') {
@@ -16,7 +16,7 @@ pipeline {
         }
         stage('push image') {
             steps {
-                sh 'docker push hishamkhalil/flaskapp:$BUILD_NUMBER'
+                sh 'docker push nasirnauman/flaskapp:$BUILD_NUMBER'
             }
         }
         stage('Remote Shell') {
