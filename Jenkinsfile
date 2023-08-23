@@ -6,7 +6,7 @@ pipeline {
     stages { 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t hishamkhalil/flaskapp:$BUILD_NUMBER .'
+                sh 'docker build -t nasirnauman/flaskapp:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -23,17 +23,17 @@ pipeline {
             steps {
                 script {
                     // Define your remote server details
-                    def remoteServer = '35.173.185.18'
-                    def remoteUser = 'ubuntu'
-                    def remotePassword = '123456'
+                //    def remoteServer = '35.173.185.18'
+                  //  def remoteUser = 'ubuntu'
+                   // def remotePassword = '123456'
                     
                     // Command to execute remotely
-                    def remoteCommand = 'mkdir test'
+                   // def remoteCommand = 'mkdir test'
                     
                     // Execute the command on the remote server
-                    sh(script: """
-                        sshpass -p ${remotePassword} ssh ${remoteUser}@${remoteServer} '${remoteCommand}'
-                    """, returnStatus: true)
+                  //  sh(script: """
+                    //    sshpass -p ${remotePassword} ssh ${remoteUser}@${remoteServer} '${remoteCommand}'
+                  //  """, returnStatus: true)
                 }
             }
         }
