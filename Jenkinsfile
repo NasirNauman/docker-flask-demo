@@ -19,9 +19,9 @@ pipeline {
                 sh 'docker push nasirnauman/flaskapp:$BUILD_NUMBER'
             }
         }
-        stage('Remote Shell') {
-            steps {
-                script {
+      //  stage('Remote Shell') {
+      //      steps {
+      //          script {
                     // Define your remote server details
                 //    def remoteServer = '35.173.185.18'
                   //  def remoteUser = 'ubuntu'
@@ -34,10 +34,10 @@ pipeline {
                   //  sh(script: """
                     //    sshpass -p ${remotePassword} ssh ${remoteUser}@${remoteServer} '${remoteCommand}'
                   //  """, returnStatus: true)
-                }
+           //     }
             }
-        }
-    }
+       // }
+  //  }
     post {
         always {
             sh 'docker logout'
